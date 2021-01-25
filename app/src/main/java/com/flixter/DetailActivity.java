@@ -44,7 +44,7 @@ public class DetailActivity extends YouTubeBaseActivity {
         ratingBar = findViewById(R.id.ratingBar);
         youTubePlayerView = findViewById(R.id.player);
 
-        Movie movie = Parcels.unwrap(getIntent().getParcelableExtra("movie "));
+        Movie movie = Parcels.unwrap(getIntent().getParcelableExtra("movie"));
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
         ratingBar.setRating((float) movie.getRating());
@@ -74,7 +74,7 @@ public class DetailActivity extends YouTubeBaseActivity {
     }
 
     private void initializeYoutube(final String youtubeKey) {
-        youTubePlayerView.initialize("YOUTUBE_API_KEY", new YouTubePlayer.OnInitializedListener() {
+        youTubePlayerView.initialize(YOUTUBE_API_KEY, new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d("DetailActivity", "onInitializationSuccess");
